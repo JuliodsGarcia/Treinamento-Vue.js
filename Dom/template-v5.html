@@ -1,0 +1,26 @@
+<!--  Evitando Re-Renderizacao com v-once -->
+
+<script src=" https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+  <!--  Adicionando v-once -->
+  <p v-once>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+  <a v-bind:href="link">Link Google</a>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Ola Vue.js",
+      link: "https://google.com.br",
+    },
+    methods: {
+      saudacao: function () {
+        this.titulo = "Julio"; <!--  Atualizando o valor sem renderizar v-once -->
+        return this.titulo;
+      },
+    },
+  });
+</script>

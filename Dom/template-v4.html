@@ -1,0 +1,24 @@
+<script src=" https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+  <!--  Usando Diretivas do Vue, v-bind para pegar Propriedades de Tags HTML... -->
+  <a v-bind:href="link">Link Google</a>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Ola Vue.js",
+      <!--  Associando o link a propriedade HTML href... -->
+      link: "https://google.com.br",
+    },
+    methods: {
+      saudacao: function () {
+        return this.titulo;
+      },
+    },
+  });
+</script>
